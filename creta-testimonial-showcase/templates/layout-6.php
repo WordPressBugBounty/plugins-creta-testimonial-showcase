@@ -15,7 +15,6 @@ $bg_color_darker = $bg_color ? cretats_darken_color($bg_color,30) : '#943C87';
                 while ( $query->have_posts() ) : $query->the_post();
                     $var = cretats_get_shortcode_customization_variables( get_the_ID(), $columns );
                     $designation   = $var['designation'];
-                    $location      = $var['location'];
                     $rating        = $var['rating'];
                     $info          = $var['info'];
                     $image_url     = $var['image_url'];
@@ -27,27 +26,27 @@ $bg_color_darker = $bg_color ? cretats_darken_color($bg_color,30) : '#943C87';
                     }
                     ?>
 
-                    <div class="testimonial-card"  <?php echo esc_attr ( cretats_get_inline_style( ['bg_color' => $bg_color] )); ?>>
+                    <div class="testimonial-card"  <?php echo  ( cretats_get_inline_style( ['bg_color' => $bg_color] )); ?>>
 
                     <div class="smart-slider-main-div-layout-6">
-                    <div class="profile-pic" <?php echo esc_attr ( cretats_get_inline_style([ 'box_shadow' => '0 0 10px 0 ' . $bg_color_lighter])); ?>>
+                    <div class="profile-pic" <?php echo  ( cretats_get_inline_style([ 'box_shadow' => '0 0 10px 0 ' . $bg_color_lighter])); ?>>
                         <?php
                         $image_to_use = $image_url ? $image_url : CRETATS_DUMMYIMG_URL;
                         ?>
                         <img src="<?php echo esc_url( $image_to_use ); ?>" alt="" loading="lazy">
                         </div>
                         <div class="testimonial-content">
-                            <h5 <?php echo esc_attr ( cretats_get_inline_style(['font_size' => $header_font_size, 'color' => $color])); ?> class="smart-slider-title-layout-6">
+                            <h5 <?php echo  ( cretats_get_inline_style(['font_family' => $font, 'font_size' => $header_font_size, 'color' => $color])); ?> class="smart-slider-title-layout-6">
                                 <?php the_title(); ?>
                             </h5>
                             <span>
-                                <?php if ( $designation || $location ) : ?>
-                                    <small <?php echo esc_attr ( cretats_get_inline_style(['font_size'=>$body_font_size,'color'=> $color])); ?> class="smart-slider-location-layout-6">
-                                        <?php echo esc_html( $designation ); ?> | <?php echo esc_html( $location ); ?>
+                                <?php if ( $designation  ) : ?>
+                                    <small <?php echo  ( cretats_get_inline_style(['font_family' => $font, 'font_size'=>$body_font_size,'color'=> $color])); ?> class="smart-slider-location-layout-6">
+                                        <?php echo esc_html( $designation ); ?> 
                                     </small>
                                 <?php endif; ?>
                             </span>
-                            <p <?php echo esc_attr (cretats_get_inline_style(['font_size' => $body_font_size, 'color' => $color])); ?> class="smart-slider-description-layout-6">
+                            <p <?php echo  (cretats_get_inline_style(['font_family' => $font, 'font_size' => $body_font_size, 'color' => $color])); ?> class="smart-slider-description-layout-6">
                             <?php echo wp_kses_post( strip_tags( get_the_content(), '<strong><em><a><span><div><br>' ) ); 
                                 if($info && $info != ''){?>
                                 <?php echo esc_html( $info ); }?>
@@ -57,13 +56,13 @@ $bg_color_darker = $bg_color ? cretats_darken_color($bg_color,30) : '#943C87';
                        
                         <?php if ( $rating >= 0 ) : ?>
                             <div class="rating" >
-                                <div class="smart-slider-rating-layout-6" <?php echo esc_attr (cretats_get_inline_style(['font_size' => $body_font_size, 'color' => $color])); ?>>
+                                <div class="smart-slider-rating-layout-6" <?php echo  (cretats_get_inline_style(['font_family' => $font, 'font_size' => $body_font_size, 'color' => $color])); ?>>
                                 <i class="bi bi-star-fill"></i>
                                 <?php echo wp_kses_post( $rating ); ?>
 
                                 </div>
                                
-                                <span class="ms-1" <?php echo esc_attr ( cretats_get_inline_style(['font_size' => $body_font_size, 'color' => $color])); ?>>Rating</span>
+                                <span class="ms-1" <?php echo  ( cretats_get_inline_style(['font_family' => $font, 'font_size' => $body_font_size, 'color' => $color])); ?>>Rating</span>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -77,12 +76,12 @@ $bg_color_darker = $bg_color ? cretats_darken_color($bg_color,30) : '#943C87';
             </div>
 
             <!-- Custom Nav Buttons -->
-            <div class="nav-buttons" <?php echo esc_attr (cretats_get_inline_style(['bg_color' => $bg_color])); ?>>
-                <div class="circle-btn left" <?php echo esc_attr ( cretats_get_inline_style([ 'border_color' => $color, 'border'=> '2px solid'.$color ,'color'=> $bg_color_darker ])); ?>>
-                    <i class="bi bi-chevron-double-left" <?php echo esc_attr ( cretats_get_inline_style([ 'color' => $color])); ?>></i>
+            <div class="nav-buttons" <?php echo  (cretats_get_inline_style(['bg_color' => $bg_color])); ?>>
+                <div class="circle-btn left" <?php echo  ( cretats_get_inline_style([ 'border_color' => $color, 'border'=> '2px solid'.$color ,'color'=> $bg_color_darker ])); ?>>
+                    <i class="bi bi-chevron-double-left" <?php echo  ( cretats_get_inline_style([ 'color' => $color])); ?>></i>
                 </div>
-                <div class="circle-btn right" <?php echo esc_attr ( cretats_get_inline_style([ 'border_color' => $color,  'border'=> '2px solid'.$color ,'color'=> $bg_color_darker ])); ?>>
-                    <i class="bi bi-chevron-double-right" <?php echo esc_attr ( cretats_get_inline_style([ 'color' => $color])); ?>></i>
+                <div class="circle-btn right" <?php echo  ( cretats_get_inline_style([ 'border_color' => $color,  'border'=> '2px solid'.$color ,'color'=> $bg_color_darker ])); ?>>
+                    <i class="bi bi-chevron-double-right" <?php echo  ( cretats_get_inline_style([ 'color' => $color])); ?>></i>
                 </div>
             </div>
         </div>

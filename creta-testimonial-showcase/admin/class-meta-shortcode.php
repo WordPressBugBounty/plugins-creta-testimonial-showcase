@@ -38,8 +38,8 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
         }
 
         public function cretats_add_shortcode_meta_boxes() {
-            add_meta_box('cretats_preview_box', 'Live Preview', [$this, 'cretats_shortcode_preview_box'], 'cretats_tms_sc', 'normal', 'high');
-            add_meta_box('cretats_layout_style_box', 'Customization', [$this, 'cretats_shortcode_layout_style_box'], 'cretats_tms_sc', 'normal', 'default');
+            add_meta_box('cretats_layout_style_box', 'Customization', [$this, 'cretats_shortcode_layout_style_box'], 'cretats_tms_sc', 'normal', 'high');
+            add_meta_box('cretats_preview_box', 'Live Preview', [$this, 'cretats_shortcode_preview_box'], 'cretats_tms_sc', 'normal', 'default');
             add_meta_box(
                 'cretats_shortcode_box',            
                 'Short Code',                         
@@ -131,14 +131,12 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
                                 <label class="form-label">Font Style:</label>
                                 <select name="cretats_font" class="form-select form-control form-control-color">
                                     <option <?php echo  selected($font, 'Arial', false); ?>>Arial</option>
-                                    <option <?php echo  selected($font, 'Helvetica', false); ?>>Helvetica</option>
                                     <option <?php echo  selected($font, 'Georgia', false); ?>>Georgia</option>
                                     <option <?php echo  selected($font, 'Times New Roman', false); ?>>Times New Roman</option>
                                     <option <?php echo  selected($font, 'Trebuchet MS', false); ?>>Trebuchet MS</option>
                                     <option <?php echo  selected($font, 'Verdana', false); ?>>Verdana</option>
                                     <option <?php echo  selected($font, 'Tahoma', false); ?>>Tahoma</option>
                                     <option <?php echo  selected($font, 'Courier New', false); ?>>Courier New</option>
-                                    <option <?php echo  selected($font, 'Lucida Grande', false); ?>>Lucida Grande</option>
                                     <option <?php echo  selected($font, 'Segoe UI', false); ?>>Segoe UI</option>
                                 </select>
                             </div>
@@ -158,12 +156,12 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
                             </div>
                             
                             <div class="col-md-4">
-                                <label class="form-label">Color:</label><br>
+                                <label class="form-label">Text Color:</label><br>
                                 <input type="text" name="cretats_color" value="<?php echo esc_attr($color); ?>" class="form-control color-picker cretats-full-width">
                             </div>
 
                             <div class="col-md-4">
-                                <label class="form-label">Background Color:</label><br>
+                                <label class="form-label">Card Color:</label><br>
                                 <input type="text" id="cretats_bg_color" name="cretats_bg_color" value="<?php echo esc_attr($bg_color); ?>" class="bg-color-picker cretats-full-width">
                             </div>
 

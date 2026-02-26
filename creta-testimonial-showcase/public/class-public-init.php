@@ -14,10 +14,7 @@ if(!class_exists('Cretats_Public_Init')){
             wp_enqueue_style( 'cretats-public-bs-css', CRETATS_URL . 'assets/css/bootstrap.min.css', [], CRETATS_VERSION );
             wp_enqueue_script('cretats-public-bs-js',CRETATS_URL . 'assets/js/bootstrap.bundle.min.js',[ 'jquery' ],CRETATS_VERSION,true 
             );
-            
             wp_enqueue_style( 'cretats-public-font-awesome', CRETATS_URL . 'assets/css/all.min.css',[],CRETATS_VERSION );
-
-
             wp_enqueue_style('cretats-public-carousel', CRETATS_URL . 'assets/css/owl.carousel.min.css',[], CRETATS_VERSION);
             wp_enqueue_style('cretats-public-theme', CRETATS_URL . 'assets/css/owl.theme.min.css',[], CRETATS_VERSION);
             wp_enqueue_script('cretats-public-owl-carousel', CRETATS_URL . 'assets/js/owl.carousel.min.js',  array('jquery'), CRETATS_VERSION, true);

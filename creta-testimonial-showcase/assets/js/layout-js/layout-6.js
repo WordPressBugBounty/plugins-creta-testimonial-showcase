@@ -19,7 +19,7 @@
 
 function initializeTestimonialSlider(selector, columns = 1) {
     jQuery(document).ready(function($) {
-        $(selector).owlCarousel({
+        var owl = $(selector).owlCarousel({
             items: columns,
             slideSpeed: 1000,
             autoPlay: false,

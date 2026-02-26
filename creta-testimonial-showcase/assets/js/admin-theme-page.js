@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+
+  // Debounce helper
+  const debounce = (func, delay = 400) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+  };
+
   const searchInput = document.getElementById('theme-search');
   const filterSelect = document.getElementById('theme-filter');
   const themeGrid = document.getElementById('theme-grid');
@@ -81,6 +91,13 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
         }
 
+        const price = node?.variants?.edges?.[0]?.node?.price;
+        if (!price || parseFloat(price) === 0) {
+            return;
+        }
+
+       
+
         html += `<div class="col-md-4">
         <div class="theme-wrapper">
           <div class="theme-card text-center p-3">
@@ -150,12 +167,22 @@ document.addEventListener('DOMContentLoaded', function () {
   if ( searchInput != null ) {
     
     // Event: search
-    searchInput.addEventListener('input', () => {
+    // searchInput.addEventListener('input', () => {
+    //   searchTerm = searchInput.value;
+    //   paginationStack = [''];
+    //   hasNextPage = true;
+    //   getProducts(false); // append = false (fresh render)
+    // });
+
+
+    const debouncedSearch = debounce(() => {
       searchTerm = searchInput.value;
       paginationStack = [''];
       hasNextPage = true;
-      getProducts(false); // append = false (fresh render)
-    });
+      getProducts(false); // fresh render
+    }, 500);
+
+    searchInput.addEventListener('input', debouncedSearch);
   }
 
   if ( filterSelect != null ) {
@@ -181,6 +208,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+
+  const clearBtn = document.querySelector('.search-by-cat-clear');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+
+      const checked = filterSelect?.querySelectorAll('input[type="radio"]:checked');
+      checked?.forEach(radio => radio.checked = false);
+
+      collectionHandle = '';
+      paginationStack = [''];
+      hasNextPage = true;
+      getProducts(false);
+    });
+  }
 
   // Init
   searchTerm = '';

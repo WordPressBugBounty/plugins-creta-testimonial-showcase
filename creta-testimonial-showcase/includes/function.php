@@ -15,7 +15,6 @@ function cretats_get_shortcode_customization_variables($post_id, $columns = 1, $
     $body_font_size = get_post_meta($post_id, '_cretats_sc_body_font_size', true) ?: null;
 
     $designation = get_post_meta(get_the_ID(), '_cretats_designation', true);
-    $location = get_post_meta(get_the_ID(), '_cretats_location', true);
     $rating = get_post_meta(get_the_ID(), '_cretats_rating', true);
     $info = get_post_meta(get_the_ID(), '_cretats_info', true);
     $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
@@ -34,7 +33,6 @@ function cretats_get_shortcode_customization_variables($post_id, $columns = 1, $
         'bootstrap_col' => $bootstrap_col,
 
         'designation' => $designation,
-        'location' => $location,
         'rating' => $rating,
         'info' => $info,
         'image_url' => $image_url,

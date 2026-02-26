@@ -54,7 +54,12 @@ function cretats_render_themes_page() {
         <!-- Sidebar -->
             <div class='col-lg-3'>
                 <aside class='bg-white p-4 rounded shadow-sm theme-sidebar'>
-                    <button class='btn btn-light w-100 mb-3 text-start fw-semibold search-by-cat-box'>Search By Categories</button>
+                    <div class="d-flex flex-column">
+                        <button class='btn btn-light w-100 text-start fw-semibold search-by-cat-box mb-2'>Search By Categories</button>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-outline-secondary w-20 search-by-cat-clear" >Clear </button>
+                        </div>
+                    </div>
                     <ul id='theme-filter' class='theme-radio-list list-unstyled small text-muted mb-4'></ul>
                     <!-- New div -->
                     <div class="sidebar-promo-box mt-4 p-3 text-center border rounded">

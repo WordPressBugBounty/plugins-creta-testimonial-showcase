@@ -39,17 +39,17 @@ function cretats_testimonial_register_post_type() {
     if (!post_type_exists( 'cretats_tms_sc' ) ) {
         
         $labels = array(
-            'name'               => 'ShortCodes',
-            'singular_name'      => 'ShortCode',
-            'all_items'          =>  'Shortcodes',
-            'menu_name'          => 'Shortcodes',
-            'add_new_item'       => 'Add New ShortCode',
-            'edit_item'          => 'Edit ShortCode',
-            'new_item'           => 'New ShortCode',
+            'name'               => 'Testimonial Designs',
+            'singular_name'      => 'Testimonial Design',
+            'all_items'          =>  'Testimonial Designs',
+            'menu_name'          => 'Testimonial Designs',
+            'add_new_item'       => 'Add New Testimonial Design',
+            'edit_item'          => 'Edit Testimonial Design',
+            'new_item'           => 'New Testimonial Design',
             'view_item'          => 'View Show',
-            'search_items'       => 'Search Shortcodes',
-            'not_found'          => 'No Shortcodes found',
-            'not_found_in_trash' => 'No Shortcodes found in Trash',
+            'search_items'       => 'Search Testimonial Designs',
+            'not_found'          => 'No Testimonial Designs found',
+            'not_found_in_trash' => 'No Testimonial Designs found in Trash',
         );
         
         $args = array(

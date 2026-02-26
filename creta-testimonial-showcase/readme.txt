@@ -4,7 +4,7 @@ Tags: testimonials, reviews, feedback, WordPress plugin
 Requires at least: 5.0  
 Tested up to: 6.8  
 Requires PHP: 7.2  
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -71,6 +71,11 @@ Integrating the Creta Testimonial Showcase plugin with any premium [WordPress bl
 * Hosting: Modern WordPress-compatible hosting with SSL and at least 128MB memory recommended
 
 == Changelog ==
+
+= 1.2.5 - 2026-26-02 =
+* Templates and style tab minor issues resolved. 
+* Label name updated and Carousal issue resolved.
+* Removed location option and rating option ui improved.
 
 = 1.2.4 - 2025-18-10 =
 * Minor Fixes.

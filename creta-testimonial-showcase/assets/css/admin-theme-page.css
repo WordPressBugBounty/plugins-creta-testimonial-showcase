@@ -575,3 +575,12 @@ fieldset:disabled .btn {
   font-size: 40px;
   cursor: pointer;
 }
+
+
+
+.search-by-cat-clear{
+  border-radius: 10px !important;
+  background-color: #ffffff !important;
+  color: #272c2e !important;
+  font-family: "Inter" !important;
+}

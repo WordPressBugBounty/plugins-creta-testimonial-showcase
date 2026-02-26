@@ -56,13 +56,11 @@ class Cretats_Testimonial_Meta_Boxes{
 
         wp_nonce_field('cretats_testimonial_nonce_action', 'cretats_testimonial_nonce');
         $designation = '';
-        $location    = '';
         $rating      = '';
         $info        = '';
     
         if ($post && $post->ID && $post->post_status !== 'auto-draft') {
             $designation = get_post_meta($post->ID, '_cretats_designation', true);
-            $location    = get_post_meta($post->ID, '_cretats_location', true);
             $rating      = get_post_meta($post->ID, '_cretats_rating', true);
             $info        = get_post_meta($post->ID, '_cretats_info', true);
         }
@@ -72,19 +70,21 @@ class Cretats_Testimonial_Meta_Boxes{
                 <th><label for="cretats_designation">Designation</label></th>
                 <td><input type="text" name="cretats_designation" id="cretats_designation" class="regular-text" value="<?php echo esc_attr($designation); ?>" /></td>
             </tr>
-            <tr>
-                <th><label for="cretats_location">Location</label></th>
-                <td><input type="text" name="cretats_location" id="cretats_location" class="regular-text" value="<?php echo esc_attr($location); ?>" /></td>
-            </tr>
+
             <tr>
                 <th><label for="cretats_rating">Rating (1-5)</label></th>
                 <td>
-                    <div class="star-rating-wrapper" >
-                        <?php for ($i = 1; $i <= 5; $i++) : ?>
-                            <span class="dashicons <?php echo ($rating >= $i) ? 'dashicons-star-filled' : 'dashicons-star-empty'; ?> cretats-star" data-value="<?php echo esc_attr($i); ?>" ></span>
-                        <?php endfor; ?>
+                    <div class="star-rating-wrapper d-flex" >
+                        <div>
+                            <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                <span class="dashicons <?php echo ($rating >= $i) ? 'dashicons-star-filled' : 'dashicons-star-empty'; ?> cretats-star" data-value="<?php echo esc_attr($i); ?>" ></span>
+                            <?php endfor; ?>
+                        </div>
+                        <div class="ms-3">
+                            <input type="number" step="0.1" max="5" min="0" name="cretats_rating" id="cretats_rating" value="<?php echo esc_attr($rating); ?>"  />
+                        </div>
                     </div>
-                    <input type="number" step="0.1" max="5" min="0" name="cretats_rating" id="cretats_rating" value="<?php echo esc_attr($rating); ?>"  />
+                    
                     <small class="text-muted d-block mt-1">You can also give ratings in decimals (e.g., 4.6, 2.8)</small>
                 </td>
             </tr>
@@ -121,9 +121,7 @@ class Cretats_Testimonial_Meta_Boxes{
             update_post_meta($post_id, '_cretats_designation', sanitize_text_field(wp_unslash($_POST['cretats_designation'])));
         }
     
-        if (isset($_POST['cretats_location'])) {
-            update_post_meta($post_id, '_cretats_location', sanitize_text_field(wp_unslash($_POST['cretats_location'])));
-        }
+        
     
         if (isset($_POST['cretats_rating'])) {
             update_post_meta($post_id, '_cretats_rating', floatval($_POST['cretats_rating']));
