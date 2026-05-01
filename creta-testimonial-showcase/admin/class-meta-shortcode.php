@@ -121,13 +121,13 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
 
                     <!-- style -->
                     <div class="tab-st-content" id="style-tab">
-                        <div class="row g-4">
-                        <div class="col-md-6">
+                        <div class="row  content-demo-row">
+                        <div class="col-md-6 demo-con">
                                 <label class="form-label">Columns:</label>
                                 <input type="number" name="cretats_columns" value="<?php echo esc_attr($columns); ?>" class="form-control">
                                 <small class="text-muted d-block mt-1">In a row, columns will be shown</small>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 demo-con">
                                 <label class="form-label">Font Style:</label>
                                 <select name="cretats_font" class="form-select form-control form-control-color">
                                     <option <?php echo  selected($font, 'Arial', false); ?>>Arial</option>
@@ -143,29 +143,29 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
 
 
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 demo-con">
                                 <label class="form-label">Header Font Size:</label>
                                 <input type="number" name="cretats_header_font_size" value="<?php echo esc_attr($header_font_size); ?>" class="form-control form-control-color cretats-full-width">
                                 <small class="text-muted d-block mt-1">The number will be considered as pixels (px)</small>
                             </div>
                             
-                            <div class="col-md-6">
+                            <div class="col-md-6 demo-con">
                                 <label class="form-label">Body Font Size:</label>
                                 <input type="number" name="cretats_body_font_size" value="<?php echo esc_attr($body_font_size); ?>" class="form-control form-control-color cretats-full-width">
                                 <small class="text-muted d-block mt-1">The number will be considered as pixels (px)</small>
                             </div>
                             
-                            <div class="col-md-4">
+                            <div class="col-md-6 demo-con">
                                 <label class="form-label">Text Color:</label><br>
                                 <input type="text" name="cretats_color" value="<?php echo esc_attr($color); ?>" class="form-control color-picker cretats-full-width">
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6 demo-con">
                                 <label class="form-label">Card Color:</label><br>
                                 <input type="text" id="cretats_bg_color" name="cretats_bg_color" value="<?php echo esc_attr($bg_color); ?>" class="bg-color-picker cretats-full-width">
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6 demo-con">
                                 <label class="form-label">Block Background Color:</label><br>
                                 <input type="text" id="cretats_block_bg_color" name="cretats_block_bg_color" value="<?php echo esc_attr($block_bg_color); ?>" class="form-control block-bg-color-picker cretats-full-width">
                             </div>
@@ -176,13 +176,13 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
 
                     <!-- filter -->
                     <div class="tab-st-content" id="filter-tab">
-                        <div class="row g-4">
-                            <div class="col-md-6">
+                        <div class="row content-demo-row">
+                            <div class="col-md-6 demo-con">
                                 <label class="form-label">Limit:</label>
                                 <input type="number" name="cretats_limit" value="<?php echo esc_attr($limit); ?>" class="form-control">
                                 <small class="text-muted d-block mt-1">How many Testimonials will be shown in front</small>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 demo-con">
                                 <label class="form-label">Exclude Testimonials:</label>
                                 <input type="text" name="cretats_exclude" value="<?php echo esc_attr($exclude); ?>" class="form-control">
                                 <small class="text-muted d-block mt-1">Put Testimonial IDs comma-separated (Ex. 120,150)</small>
