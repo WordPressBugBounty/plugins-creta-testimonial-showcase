@@ -13,6 +13,8 @@ function cretats_get_shortcode_customization_variables($post_id, $columns = 1, $
     $columns = get_post_meta($post_id, '_cretats_sc_columns', true) ?: $columns;
     $header_font_size = get_post_meta($post_id, '_cretats_sc_header_font_size', true) ?: null;
     $body_font_size = get_post_meta($post_id, '_cretats_sc_body_font_size', true) ?: null;
+    $show_image_meta = get_post_meta($post_id, '_cretats_sc_show_image', true);
+    $show_image = ($show_image_meta !== 'no');
 
     $designation = get_post_meta(get_the_ID(), '_cretats_designation', true);
     $rating = get_post_meta(get_the_ID(), '_cretats_rating', true);
@@ -40,7 +42,7 @@ function cretats_get_shortcode_customization_variables($post_id, $columns = 1, $
         'exclude_ids' => $exclude_ids,
         'header_font_size' => $header_font_size,
         'body_font_size' => $body_font_size,
-
+        'show_image' => $show_image,
 
     ];
 }

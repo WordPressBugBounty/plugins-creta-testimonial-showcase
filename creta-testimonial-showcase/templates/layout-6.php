@@ -29,12 +29,14 @@ $bg_color_darker = $bg_color ? cretats_darken_color($bg_color,30) : '#943C87';
                     <div class="testimonial-card"  <?php echo  ( cretats_get_inline_style( ['bg_color' => $bg_color] )); ?>>
 
                     <div class="smart-slider-main-div-layout-6">
+                    <?php if ( ! empty( $show_image ) ) : ?>
                     <div class="profile-pic" <?php echo  ( cretats_get_inline_style([ 'box_shadow' => '0 0 10px 0 ' . $bg_color_lighter])); ?>>
                         <?php
                         $image_to_use = $image_url ? $image_url : CRETATS_DUMMYIMG_URL;
                         ?>
                         <img src="<?php echo esc_url( $image_to_use ); ?>" alt="" loading="lazy">
                         </div>
+                    <?php endif; ?>
                         <div class="testimonial-content">
                             <h5 <?php echo  ( cretats_get_inline_style(['font_family' => $font, 'font_size' => $header_font_size, 'color' => $color])); ?> class="smart-slider-title-layout-6">
                                 <?php the_title(); ?>

@@ -306,3 +306,7 @@
 .col-md-6.demo-con {
     width: 45% !important;
 }
+
+.form-control.form-control-color.cretats-full-width {
+	width: 68px;
+}

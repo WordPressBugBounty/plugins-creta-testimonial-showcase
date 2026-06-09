@@ -24,6 +24,7 @@ if ( $query->have_posts() ) :
                 ?>
 
                 <div class="testimonial-card" <?php echo  ( cretats_get_inline_style(['bg_color' => $bg_color] )); ?>>
+                <?php if ( ! empty( $show_image ) ) : ?>
                 <div class="profile-img smart-slider-profile-img-layout-5" <?php echo  ( cretats_get_inline_style([ 'box_shadow' => '0 0 10px 0 ' . $bg_color_darker ])); ?>>
                        <?php
                         $image_to_use = $image_url ?: CRETATS_DUMMYIMG_URL;
@@ -31,6 +32,7 @@ if ( $query->have_posts() ) :
                         <img src="<?php echo esc_url( $image_to_use ); ?>" alt="" loading="lazy">
 
                     </div>
+                <?php endif; ?>
                     <h5 <?php echo  ( cretats_get_inline_style( ['font_family' => $font, 'font_size' => $header_font_size, 'color' => $color ])); ?> class="smart-slider-title-layout-5">
                         <?php the_title(); ?>
                     </h5>

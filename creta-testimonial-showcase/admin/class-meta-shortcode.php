@@ -71,6 +71,7 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
             $exclude = $var['exclude'];
             $header_font_size = $var['header_font_size'];
             $body_font_size = $var['body_font_size'];
+            $show_image = $var['show_image'];
             ?>
             <div class="tabs-wrapper">
                 <ul class="tab-st-buttons tab-st-section">
@@ -170,6 +171,15 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
                                 <input type="text" id="cretats_block_bg_color" name="cretats_block_bg_color" value="<?php echo esc_attr($block_bg_color); ?>" class="form-control block-bg-color-picker cretats-full-width">
                             </div>
 
+                            <div class="col-md-6 demo-con">
+                                <label class="form-label d-block">Profile Image:</label>
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="cretats_show_image" value="yes" class="form-check-input" <?php checked($show_image, true); ?>>
+                                    <?php echo esc_html('Show profile image'); ?>
+                                </label>
+                                <small class="text-muted d-block mt-1"><?php echo esc_html('Uncheck to hide avatar images in this showcase'); ?></small>
+                            </div>
+
                             
                         </div>
                     </div>
@@ -214,6 +224,8 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
             if (isset($_POST['cretats_exclude'])) update_post_meta($post_id, '_cretats_sc_exclude', sanitize_text_field(wp_unslash($_POST['cretats_exclude'])));
             if (isset($_POST['cretats_header_font_size'])) update_post_meta($post_id, '_cretats_sc_header_font_size', sanitize_text_field(wp_unslash($_POST['cretats_header_font_size'])));
             if (isset($_POST['cretats_body_font_size'])) update_post_meta($post_id, '_cretats_sc_body_font_size', sanitize_text_field(wp_unslash($_POST['cretats_body_font_size'])));
+            $show_image = (isset($_POST['cretats_show_image']) && sanitize_text_field(wp_unslash($_POST['cretats_show_image'])) === 'yes') ? 'yes' : 'no';
+            update_post_meta($post_id, '_cretats_sc_show_image', $show_image);
 
             $limit = isset($_POST['cretats_limit']) ? intval($_POST['cretats_limit']) : 1;
             $exclude_ids = isset($_POST['cretats_exclude']) ? array_map('intval', explode(',', sanitize_text_field(wp_unslash($_POST['cretats_exclude'])))) : [];
@@ -279,6 +291,7 @@ if ( !class_exists( 'Cretats_Testimonial_Meta_ShortCode' ) ) {
 
             $header_font_size = isset($_POST['header_font_size']) ? intval(wp_unslash($_POST['header_font_size'])) : 0;
             $body_font_size = isset($_POST['body_font_size']) ? intval(wp_unslash($_POST['body_font_size'])) : 0;
+            $show_image = !isset($_POST['show_image']) || sanitize_text_field(wp_unslash($_POST['show_image'])) === 'yes';
 
             $args = [
                 'post_type' => 'cretats_testimonial',

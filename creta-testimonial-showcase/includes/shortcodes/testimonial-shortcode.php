@@ -27,6 +27,7 @@ function cretats_testimonials_shortcode_func($atts)
     $exclude = $var['exclude'];
     $header_font_size = $var['header_font_size'];
     $body_font_size = $var['body_font_size'];
+    $show_image = $var['show_image'];
     $include_ids = get_post_meta($post_id, '_cretats_sc_result_ids', true);
     $exclude_ids = !empty($exclude) ? array_map('intval', explode(',', $exclude)) : [];
 

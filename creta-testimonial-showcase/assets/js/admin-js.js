@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
         let exclude = $('input[name="cretats_exclude"]').val();
         let header_font_size = $('input[name="cretats_header_font_size"]').val();
         let body_font_size = $('input[name="cretats_body_font_size"]').val();
-        
+        let show_image = $('input[name="cretats_show_image"]').is(':checked') ? 'yes' : 'no';
 
         $.ajax({
             // url: ajaxurl,
@@ -59,6 +59,7 @@ jQuery(document).ready(function($) {
                 exclude: exclude,
                 header_font_size: header_font_size,
                 body_font_size: body_font_size,
+                show_image: show_image,
 
             },
             success: function(response) {
@@ -67,7 +68,7 @@ jQuery(document).ready(function($) {
         });
     }
 
-    $('input[name="cretats_layout"], select[name="cretats_font"], input[name="cretats_color"], input[name="cretats_bg_color"],input[name="cretats_limit"],input[name="cretats_columns"],input[name="cretats_exclude"],input[name="cretats_header_font_size"],input[name="cretats_body_font_size"]').on('change', updatePreview);
+    $('input[name="cretats_layout"], select[name="cretats_font"], input[name="cretats_color"], input[name="cretats_bg_color"],input[name="cretats_limit"],input[name="cretats_columns"],input[name="cretats_exclude"],input[name="cretats_header_font_size"],input[name="cretats_body_font_size"],input[name="cretats_show_image"]').on('change', updatePreview);
 
     // Listen color picker event
     $('.bg-color-picker').on('colorPickerChanged', updatePreview);

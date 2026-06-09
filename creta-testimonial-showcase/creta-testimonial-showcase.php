@@ -3,7 +3,7 @@
  * Plugin Name: Creta Testimonial Showcase
  * Plugin URI: 
  * Description: Easily display beautiful testimonials using Gutenberg blocks. Customize layout, colors, and animation for maximum engagement.
- * Version: 1.2.6
+ * Version: 1.2.7
  * Requires at least: 5.0
  * Author: cretathemes
  * Author URI: https://www.cretathemes.com/
@@ -22,7 +22,7 @@ define('CRETATS_THEME_BUNDLE_IMAGE_URL', plugin_dir_url(__FILE__). 'assets/img/g
 define('CRETATS_THEME_BUNDLE_UPPER_IMAGE_URL', plugin_dir_url(__FILE__). 'assets/img/bundle-banner-top-img.png');
 define('CRETATS_ELEMENTO_API_BASE', 'https://license.cretathemes.com/api/public');
 define('CRETATS_ELEMENTO_API_MAIN', 'https://www.cretathemes.com/');
-define('CRETATS_VERSION', '1.2.6');
+define('CRETATS_VERSION', '1.2.7');
 
 require_once CRETATS_PATH .'includes/post-types/register-testimonial.php';
 include_once CRETATS_PATH . 'includes/shortcodes/testimonial-shortcode.php';
@@ -81,7 +81,7 @@ add_action('admin_notices', function () { ?>
     <div class="bundle-row">
       <div class="bundle-box first-box">
         <h3 class="bundle-heading"><?php echo esc_html('WordPress Theme Bundle'); ?></h3>
-        <p class="bundle-subtext"><?php echo esc_html('Collection of 75+ Premium Block Themes'); ?></p>
+        <p class="bundle-subtext"><?php echo esc_html('Collection of 80+ Premium Block Themes'); ?></p>
       </div>
       <div class="bundle-box second-box">
       <p class="bundle-promo-text text-bold"><?php echo esc_html('SUMMER SALE: '); ?><span class="banner-highlight-off"><?php echo esc_html('Extra 20% OFF'); ?></span><?php echo esc_html(' on WordPress Theme Bundle Use Code: '); ?><span class="banner-highlight-code"><?php echo esc_html('“HEAT20”'); ?></span></p>

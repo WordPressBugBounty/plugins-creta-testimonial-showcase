@@ -33,10 +33,12 @@ $bg_color_lighter = cretats_lighten_color($bg_color ?: '#b3d9ff', 70);
             $bg_color = get_post_meta($post_id, '_cretats_sc_bg_color', true) ?: null;
         ?>
             <div class='testimonial-item' <?php echo  (cretats_get_inline_style(['background' => $bg_color_lighter])); ?>>
+                <?php if ( ! empty( $show_image ) ) : ?>
                 <div class="profile-img-div">
                     <img src="<?php echo esc_url($image_url ?: CRETATS_DUMMYIMG_URL); ?>" alt="Person"
                          class="profile-img smart-slider-img-layout-7" />
                 </div>
+                <?php endif; ?>
                 <div class="testimonial-box" <?php echo  ( cretats_get_inline_style(['bg_color' => $bg_color])); ?>>
                     <div class="quote-icon">“</div>
                     <?php if ($rating >= 0) : ?>
