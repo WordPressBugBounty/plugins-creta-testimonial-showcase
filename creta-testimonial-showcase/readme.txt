@@ -4,7 +4,7 @@ Tags: testimonials, reviews, feedback, WordPress plugin
 Requires at least: 5.0  
 Tested up to: 7.0
 Requires PHP: 7.2  
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -71,6 +71,9 @@ Integrating the Creta Testimonial Showcase plugin with any premium [WordPress bl
 * Hosting: Modern WordPress-compatible hosting with SSL and at least 128MB memory recommended
 
 == Changelog ==
+
+= 1.2.8 - 2026-07-02 =
+* Added a "Recommended Templates" widget to the Testimonial and Testimonial Design editor sidebar, showcasing relevant premium templates.
 
 = 1.2.7 - 2026-05-06 =
 * Added new "Profile Image" setting to show or hide avatar images in the showcase. 

@@ -3,7 +3,7 @@
  * Plugin Name: Creta Testimonial Showcase
  * Plugin URI: 
  * Description: Easily display beautiful testimonials using Gutenberg blocks. Customize layout, colors, and animation for maximum engagement.
- * Version: 1.2.7
+ * Version: 1.2.8
  * Requires at least: 5.0
  * Author: cretathemes
  * Author URI: https://www.cretathemes.com/
@@ -22,7 +22,7 @@ define('CRETATS_THEME_BUNDLE_IMAGE_URL', plugin_dir_url(__FILE__). 'assets/img/g
 define('CRETATS_THEME_BUNDLE_UPPER_IMAGE_URL', plugin_dir_url(__FILE__). 'assets/img/bundle-banner-top-img.png');
 define('CRETATS_ELEMENTO_API_BASE', 'https://license.cretathemes.com/api/public');
 define('CRETATS_ELEMENTO_API_MAIN', 'https://www.cretathemes.com/');
-define('CRETATS_VERSION', '1.2.7');
+define('CRETATS_VERSION', '1.2.8');
 
 require_once CRETATS_PATH .'includes/post-types/register-testimonial.php';
 include_once CRETATS_PATH . 'includes/shortcodes/testimonial-shortcode.php';
@@ -71,6 +71,7 @@ if(is_admin()){
     require_once CRETATS_PATH . 'admin/admin-functions.php';
     require_once CRETATS_PATH . 'admin/class-meta-boxes.php';
     require_once CRETATS_PATH . 'admin/class-meta-shortcode.php';
+    require_once CRETATS_PATH . 'admin/class-recommended-templates.php';
     require_once CRETATS_PATH . 'admin/themes-page/themes-page.php';
 } else {
     require_once CRETATS_PATH . 'public/class-public-init.php';
