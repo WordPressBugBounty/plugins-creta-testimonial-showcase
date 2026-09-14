@@ -4,7 +4,7 @@ Tags: testimonials, reviews, feedback, WordPress plugin
 Requires at least: 5.0  
 Tested up to: 7.0
 Requires PHP: 7.2  
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -71,6 +71,9 @@ Integrating the Creta Testimonial Showcase plugin with any premium [WordPress bl
 * Hosting: Modern WordPress-compatible hosting with SSL and at least 128MB memory recommended
 
 == Changelog ==
+
+= 1.2.9 - 2026-09-14 =
+* Fixed: "Layout 5" testimonial slider used a mistyped CSS class (`owl-carousel-old` instead of `owl-carousel`), so the carousel library's core layout rules (item floating, overflow clipping, wrapper positioning) never applied. Slides could render without proper spacing/clipping. Corrected the class name so the slider lays out as intended.
 
 = 1.2.8 - 2026-07-02 =
 * Added a "Recommended Templates" widget to the Testimonial and Testimonial Design editor sidebar, showcasing relevant premium templates.

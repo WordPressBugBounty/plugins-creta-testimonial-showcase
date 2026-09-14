@@ -11,7 +11,7 @@ if ( $query->have_posts() ) :
 <div class="container container-hide">
     <div class="row">
         <div class="col-md-12">
-            <div id="testimonial-slider" class="testimonial-slider owl-carousel-old owl-theme smart-slider-layout-5">
+            <div id="testimonial-slider" class="testimonial-slider owl-carousel owl-theme smart-slider-layout-5">
                 <?php
                 while ( $query->have_posts() ) : $query->the_post();
                     $var = cretats_get_shortcode_customization_variables( get_the_ID(), $columns );
