@@ -65,7 +65,7 @@ function cretats_render_themes_page() {
                     <div class="sidebar-promo-box mt-4 p-3 text-center border rounded">
                         <h5 class="promo-title mb-3">Get Theme Bundle</h5>
                         <img src="<?php echo esc_url( CRETATS_THEME_BUNDLE_IMAGE_URL )?> " class="img-fluid mb-3 promo-img" alt="Promo">
-                        <p class="promo-text text-muted">SUMMER SALE: <span class="highlight-off">Extra 20% OFF</span> on WordPress Theme Bundle Use Code: <span class="highlight-code">“HEAT20”</span></p>
+                        <p class="promo-text text-muted">HALLOWEEN SALE: <span class="highlight-off">Extra 20% OFF</span> on WordPress Theme Bundle Use Code: <span class="highlight-code">“SPOOKY20”</span></p>
                         <a href="<?php echo esc_url( CRETATS_ELEMENTO_API_MAIN ) . 'products/wordpress-theme-bundle'; ?>" target="_blank" class="btn btn-sm btn-primary mt-2">Get Theme Bundle For <span class="strike-price">$86</span>  $68</a>
                     </div>
                 </aside>

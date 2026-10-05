@@ -3,7 +3,7 @@
  * Plugin Name: Creta Testimonial Showcase
  * Plugin URI: 
  * Description: Easily display beautiful testimonials using Gutenberg blocks. Customize layout, colors, and animation for maximum engagement.
- * Version: 1.2.9
+ * Version: 1.3.0
  * Requires at least: 5.0
  * Author: cretathemes
  * Author URI: https://www.cretathemes.com/
@@ -22,7 +22,7 @@ define('CRETATS_THEME_BUNDLE_IMAGE_URL', plugin_dir_url(__FILE__). 'assets/img/g
 define('CRETATS_THEME_BUNDLE_UPPER_IMAGE_URL', plugin_dir_url(__FILE__). 'assets/img/bundle-banner-top-img.png');
 define('CRETATS_ELEMENTO_API_BASE', 'https://license.cretathemes.com/api/public');
 define('CRETATS_ELEMENTO_API_MAIN', 'https://www.cretathemes.com/');
-define('CRETATS_VERSION', '1.2.9');
+define('CRETATS_VERSION', '1.3.0');
 
 require_once CRETATS_PATH .'includes/post-types/register-testimonial.php';
 include_once CRETATS_PATH . 'includes/shortcodes/testimonial-shortcode.php';
@@ -85,7 +85,7 @@ add_action('admin_notices', function () { ?>
         <p class="bundle-subtext"><?php echo esc_html('Collection of 80+ Premium Block Themes'); ?></p>
       </div>
       <div class="bundle-box second-box">
-      <p class="bundle-promo-text text-bold"><?php echo esc_html('SUMMER SALE: '); ?><span class="banner-highlight-off"><?php echo esc_html('Extra 20% OFF'); ?></span><?php echo esc_html(' on WordPress Theme Bundle Use Code: '); ?><span class="banner-highlight-code"><?php echo esc_html('“HEAT20”'); ?></span></p>
+      <p class="bundle-promo-text text-bold"><?php echo esc_html('HALLOWEEN SALE: '); ?><span class="banner-highlight-off"><?php echo esc_html('Extra 20% OFF'); ?></span><?php echo esc_html(' on WordPress Theme Bundle Use Code: '); ?><span class="banner-highlight-code"><?php echo esc_html('“SPOOKY20”'); ?></span></p>
       <a class="bundle-btn" target="_blank" href="<?php echo esc_url( CRETATS_ELEMENTO_API_MAIN ) . 'products/wordpress-theme-bundle'; ?>"><?php echo esc_html('Get Theme Bundle For '); ?><span class="strike-price"><?php echo esc_html('$86'); ?></span><?php echo esc_html(' $68'); ?></a>
       </div>
       <div class="bundle-box third-box">
