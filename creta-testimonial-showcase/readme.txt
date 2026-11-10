@@ -4,7 +4,7 @@ Tags: testimonials, reviews, feedback, WordPress plugin
 Requires at least: 5.0  
 Tested up to: 7.1
 Requires PHP: 7.2  
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -71,6 +71,14 @@ Integrating the Creta Testimonial Showcase plugin with any premium [WordPress bl
 * Hosting: Modern WordPress-compatible hosting with SSL and at least 128MB memory recommended
 
 == Changelog ==
+
+= 1.3.1 - 2026-11-10 =
+* Fixed: Loading admin/class-recommended-templates.php is now guarded, so an incomplete package can no longer cause a fatal error that breaks the admin area.
+* Security: The theme browser API requests are no longer available to logged-out visitors (they are only used on the admin Themes page).
+* Fixed: The theme browser now shows an error instead of failing silently when the theme API cannot be reached.
+* Fixed: The Themes page could show another plugin's theme catalogue when a plugin using the same generic AJAX action names was active. Creta now uses its own prefixed actions.
+* Updated: Premium themes price now shown as "Starting From $30".
+* Updated: Theme bundle banner and sidebar promo now show the Black Friday offer – Extra 20% OFF with code "BLACKFRIDAY20".
 
 = 1.3.0 - 2026-10-05 =
 * Updated: Theme bundle banner and sidebar promo now show the Halloween offer – Extra 20% OFF with code "SPOOKY20".

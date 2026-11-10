@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showLoader();
 
-    fetch(ajaxurl + '?action=get_elemento_products', {
+    fetch(ajaxurl + '?action=cretats_get_elemento_products', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   const getCollections = () => {
-    fetch(ajaxurl + '?action=get_elemento_collections')
+    fetch(ajaxurl + '?action=cretats_get_elemento_collections')
       .then(res => res.json())
       .then(json => {
         const parsed = typeof json === 'string' ? JSON.parse(json) : json;

@@ -13,8 +13,8 @@ function cretats_add_themes_page() {
   );
 }
 
-add_action( 'wp_ajax_get_elemento_collections', 'cretats_handle_get_elemento_collections' );
-add_action( 'wp_ajax_nopriv_get_elemento_collections', 'cretats_handle_get_elemento_collections' );
+// Used only by the admin Themes page, so not exposed to logged-out visitors.
+add_action( 'wp_ajax_cretats_get_elemento_collections', 'cretats_handle_get_elemento_collections' );
 
 function cretats_handle_get_elemento_collections() {
     $response = wp_remote_post( CRETATS_ELEMENTO_API_BASE . '/getCollections', [
@@ -30,8 +30,7 @@ function cretats_handle_get_elemento_collections() {
     wp_send_json( $data );
 }
 
-add_action( 'wp_ajax_get_elemento_products', 'cretats_handle_get_elemento_products' );
-add_action( 'wp_ajax_nopriv_get_elemento_products', 'cretats_handle_get_elemento_products' );
+add_action( 'wp_ajax_cretats_get_elemento_products', 'cretats_handle_get_elemento_products' );
 
 function cretats_handle_get_elemento_products() {
     $body = json_decode( file_get_contents( 'php://input' ), true );
@@ -40,6 +39,10 @@ function cretats_handle_get_elemento_products() {
         'headers' => [ 'Content-Type' => 'application/json' ],
         'body'    => json_encode( $body ),
     ] );
+
+    if ( is_wp_error( $response ) ) {
+        wp_send_json_error( [ 'message' => 'API request failed' ] );
+    }
 
     $data = json_decode( wp_remote_retrieve_body( $response ), true );
     wp_send_json( $data );
@@ -65,7 +68,7 @@ function cretats_render_themes_page() {
                     <div class="sidebar-promo-box mt-4 p-3 text-center border rounded">
                         <h5 class="promo-title mb-3">Get Theme Bundle</h5>
                         <img src="<?php echo esc_url( CRETATS_THEME_BUNDLE_IMAGE_URL )?> " class="img-fluid mb-3 promo-img" alt="Promo">
-                        <p class="promo-text text-muted">HALLOWEEN SALE: <span class="highlight-off">Extra 20% OFF</span> on WordPress Theme Bundle Use Code: <span class="highlight-code">“SPOOKY20”</span></p>
+                        <p class="promo-text text-muted">BLACK FRIDAY SALE: <span class="highlight-off">Extra 20% OFF</span> on WordPress Theme Bundle Use Code: <span class="highlight-code">“BLACKFRIDAY20”</span></p>
                         <a href="<?php echo esc_url( CRETATS_ELEMENTO_API_MAIN ) . 'products/wordpress-theme-bundle'; ?>" target="_blank" class="btn btn-sm btn-primary mt-2">Get Theme Bundle For <span class="strike-price">$86</span>  $68</a>
                     </div>
                 </aside>
